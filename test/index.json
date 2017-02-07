@@ -1,0 +1,9 @@
+{
+  "options": ["--verbose", "--typescript"],
+  "configs": {
+    "build": null,
+    "compile": null,
+    "--host": "127.0.0.1",
+    "--port": 3000
+  }
+}

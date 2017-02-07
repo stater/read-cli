@@ -1,0 +1,34 @@
+{
+  "name": "read-cli",
+  "version": "1.0.0",
+  "description": "A small NodeJS Module to help parsing the CLI command and options.",
+  "main": "dist/main.js",
+  "jsnext:main": "index.js",
+  "module": "index.js",
+  "scripts": {
+    "test": "node test build script --port 8080 --verbose --production --live=1010 --typescript",
+    "build": "rm -Rf dist && rollup -c rollup.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/stater/read-cli.git"
+  },
+  "keywords": [
+    "CLI",
+    "cli",
+    "command",
+    "line",
+    "interface",
+    "parser",
+    "helper"
+  ],
+  "author": "Nanang Mahdaen El Agung <nanang@stater.io> (https://www.stater.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stater/read-cli/issues"
+  },
+  "homepage": "https://github.com/stater/read-cli#readme",
+  "engines": {
+    "node": ">=6.0.0"
+  }
+}
