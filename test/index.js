@@ -48,6 +48,18 @@ try {
     console.log(' - [protect => throw] Success!');
   }
 
+  try {
+    let { env, arg } = parse({ nocommand: true });
+
+    if (!arg.command) {
+      console.log(' - [nocommand => true] Success!');
+    } else {
+      throw new Error();
+    }
+  } catch (error) {
+    console.log(' - [nocommand => true] Failed.');
+  }
+
   console.log('\r\nTest success!');
 } catch (err) {
   throw err;

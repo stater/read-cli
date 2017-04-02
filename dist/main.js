@@ -64,7 +64,7 @@ try {
   };
 }
 
-function parse({ configs = {}, options = [], protect, remdash = true } = {}) {
+function parse({ configs = {}, options = [], protect, remdash = true, nocommand = false } = {}) {
   const { NODE_ENV } = process.env;
   const argv = [...process.argv];
 
@@ -72,7 +72,11 @@ function parse({ configs = {}, options = [], protect, remdash = true } = {}) {
   let [command] = argv;
   let origin = argv.join(' ');
 
-  let arg = { engine, input, command };
+  let arg = { engine, input };
+
+  if (!nocommand) {
+    arg.command = command;
+  }
 
   for (let key in configs) {
     arg[key] = configs[key];

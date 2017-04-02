@@ -114,6 +114,7 @@ The parser will use the first `process.argv` (without node and file) as the comm
 *   **`configs{}`** - Object to register the CLI configs (has key and value), also giving default value if not defined on the CLI configs.
 *   **`remdash!?`** - Boolean does the parser should remove the `--` or `-` from the begining of keys. By default it'll be always removed, so use `remdash: false` to keep them.
 *   **`protect??`** - Prevent from using unknown command, configs, and options. Use `true` to add the error object to the `arg`, or use `throw` to throw the error directly.
+*   **`nocommand??`** - Ignore to mark fisrt argument as command.
 
 **Example**
 
@@ -178,7 +179,7 @@ const {env, arg} = parse({
 ```
 
 ```
-Error: Unknow parameter: build script ![--foo]=true ![--bar] --verbose --production.
+Error: Unknown agrument(s): build script ![--foo]=true ![--bar] --verbose --production.
     at parse ...
 ```
 
@@ -314,6 +315,11 @@ if (handlers[command] && handlers[command][build]) {
 ***
 
 ## Changelog
+
+#### **`v1.1.0`** - Apr 3, 2017
+
+*   Adding `nocommand` config.
+*   Change `Unknow parameters:` to `Unknown argument(s):`.
 
 #### **`v1.0.0`** - Feb 7, 2017
 
