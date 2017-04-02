@@ -112,7 +112,7 @@ function parse({ configs = {}, options = [], protect, remdash = true, nocommand 
   }
 
   if (haserror) {
-    const error = new Error(`${color.redBright('Unknow parameter:')} ${origin}${color.redBright('.')}`);
+    const error = new Error(`${color.redBright('Unknown argument(s):')} ${origin}${color.redBright('.')}`);
 
     if (protect) {
       arg.error = error;

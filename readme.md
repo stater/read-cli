@@ -316,6 +316,10 @@ if (handlers[command] && handlers[command][build]) {
 
 ## Changelog
 
+#### **`v1.1.1`** - Apr 3, 2017
+
+*   Small patch.
+
 #### **`v1.1.0`** - Apr 3, 2017
 
 *   Adding `nocommand` config.
