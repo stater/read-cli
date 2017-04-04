@@ -26,10 +26,10 @@ Parsing the CLI command above will resulting:
 
 ## Instalation
 
-Simply add the `read-cli` as dependencies and load it from your script.
+Simply add the `@stater/read-cli` as dependencies and load it from your script.
 
 ```bash
-npm install --save read-cli
+npm install --save @stater/read-cli
 ```
 
 **Example**
@@ -55,7 +55,7 @@ NODE_ENV=staging node main.js publish --host stag.localhost --port 9090 --verbos
 `main.js`
 
 ```js
-import { parse } from 'read-cli';
+import { parse } from '@stater/read-cli';
 
 const {env, arg: {command, build, host, port, verbose}} = parse({
   configs: {
@@ -99,7 +99,7 @@ const {env, arg: {command, build, host, port, verbose}} = parse({
 Use it to parse the CLI command and options. Add **`config{}`** to configure the parser.
 
 ```js
-import {parse} from 'read-cli';
+import {parse} from '@stater/read-cli';
 
 const {env, arg} = parse();
 ```
@@ -123,7 +123,7 @@ node main.js build script --host localhost --port 8080 --verbose --production
 ```
 
 ```js
-import {parse} from 'read-cli';
+import {parse} from '@stater/read-cli';
 
 const {env, arg} = parse({
   configs: {
@@ -146,7 +146,7 @@ node main.js build script --verbose --production --foo
 ```
 
 ```js
-import {parse} from 'read-cli';
+import {parse} from '@stater/read-cli';
 
 const {env, arg} = parse({
   options: ['--verbose', '--production', '--staging'],
@@ -167,7 +167,7 @@ node main.js build script --foo --bar --verbose --production
 ```
 
 ```js
-import {parse} from 'read-cli';
+import {parse} from '@stater/read-cli';
 
 const {env, arg} = parse({
   options: ['--verbose', '--production', '--staging'],
@@ -200,7 +200,7 @@ NODE_EVN=production node main.js build
 ```
 
 ```js
-import {parse, byEnv} from 'read-cli';
+import {parse, byEnv} from '@stater/read-cli';
 
 // Initialize the parser.
 parse();
@@ -239,7 +239,7 @@ NODE_SRC_TYPE=typescript node main.js build
 ```
 
 ```js
-import {parse, byOpt} from 'read-cli';
+import {parse, byOpt} from '@stater/read-cli';
 
 // Initialize the parser.
 parse();
@@ -264,7 +264,7 @@ NODE_EVN=production node main.js build script --port 8080 --verbose --typescript
 ```
 
 ```js
-import { parse, byEnv, byOpt } from 'read-cli';
+import { parse, byEnv, byOpt } from '@stater/read-cli';
 
 const handlers = {
   build: {
@@ -315,6 +315,10 @@ if (handlers[command] && handlers[command][build]) {
 ***
 
 ## Changelog
+
+#### **`v1.1.3** - Apr 4, 2017
+
+*   Moving to @stater/read-cli
 
 #### **`v1.1.1`** - Apr 3, 2017
 
