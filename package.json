@@ -1,6 +1,6 @@
 {
   "name": "@stater/read-cli",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A small NodeJS Module to help parsing the CLI command and options.",
   "main": "dist/main.js",
   "jsnext:main": "index.js",
