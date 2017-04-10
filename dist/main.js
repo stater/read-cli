@@ -4,10 +4,12 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 let env = 'default';
 let arg = {};
+let uop = [];
 
 function setCfg(res) {
   env = res.env;
   arg = res.arg;
+  uop = res.uop;
 }
 
 function byEnv(object = {}) {
@@ -83,12 +85,14 @@ function parse({ configs = {}, options = [], protect, remdash = true, nocommand 
   }
 
   let haserror = false;
+  let errlists = [];
 
   for (let input of argv) {
     let [key, value] = input.split('=');
 
     if (!(configs.hasOwnProperty(key) || options.includes(key))) {
       haserror = true;
+      errlists.push(key);
       origin = origin.replace(key, color.yellow(`![${color.redBright(key)}]`));
     }
 
@@ -148,9 +152,8 @@ function parse({ configs = {}, options = [], protect, remdash = true, nocommand 
     env = NODE_ENV;
   }
 
-  setCfg({ env, arg });
-
-  return { env, arg };
+  setCfg({ env, arg, uop: errlists });
+  return { env, arg, uop: errlists };
 }
 
 exports.byEnv = byEnv;

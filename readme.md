@@ -316,7 +316,11 @@ if (handlers[command] && handlers[command][build]) {
 
 ## Changelog
 
-#### **`v1.1.3** - Apr 4, 2017
+#### **`v1.1.4`** - Apr 10, 2017
+
+*   Included the unknown options list. { env, arg, uop }
+
+#### **`v1.1.3`** - Apr 4, 2017
 
 *   Moving to @stater/read-cli
 
